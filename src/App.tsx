@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // <-- Mude para HashRouter
 import Home from './pages/login';
 import Menu from './pages/menu';
-import Separacao from './pages/separacao';
-
-import './App.css'; 
 import Tarefa from './pages/tarefa';
+import Separacao from './pages/separacao';
+import './App.css'; 
 
 const App = () => {
   return (
@@ -13,8 +12,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path='/separacao' element={<Separacao />} />
-          <Route path='/tarefa' element={<Tarefa />} />
+          <Route path="/tarefa" element={<Tarefa />} />
+          <Route path="/separacao" element={<Separacao />} />
         </Routes>
       </div>
     </Router>
