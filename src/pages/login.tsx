@@ -1,16 +1,43 @@
-import { Link } from 'react-router-dom';
-import { Navbar } from '../components/navbar';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Login: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <Navbar />
-      <h1 style={{ fontSize: '1.5rem' }}>Coleto de dados <p>V:26.01.016 - CONSINCO@CONSINCO</p> </h1>
-      <h2 className="">Codigo</h2>
-      <input type="text" placeholder="" className="login-input" />
-      <Link to="/menu"><button className="login-button">Entrar</button></Link>
-      <Link to="/"><button className="login-button">Retornar</button></Link>
-    </div>
+    <>
+      
+      <div className="wms-header-dark">
+        TOTVS Varejo Supermercados - WMS
+      </div>
+      <div className="wms-header-cyan">
+        Coletor de Dados<br />
+        v: 26.01.016 - CONSINCO@CONSINCO
+      </div>
+
+      <div className="wms-content">
+        <div className="wms-row" style={{ marginTop: '20px' }}>
+          <span className="wms-label">Código</span>
+          <input type="text" className="wms-input" autoFocus />
+        </div>
+
+        
+        <div style={{ display: 'flex', gap: '8px', marginTop: '20px' }}>
+          <button 
+            className="wms-btn wms-btn-gray" 
+            onClick={() => navigate('/')}
+          >
+            Retornar
+          </button>
+          <button 
+            className="wms-btn wms-btn-cyan" 
+            onClick={() => navigate('/menu')}
+          >
+            Entrar
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
 

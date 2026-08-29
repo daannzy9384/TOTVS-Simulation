@@ -1,16 +1,42 @@
-import { Link } from 'react-router-dom';
-import { Navbar } from '../components/navbar';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Menu: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-        <Navbar />
-      <h1>Menu</h1>
-      <h1>Usuário: CARONE DANIEL OLIVEIRA</h1>
-      <Link to="/separacao"><button className="login-button">Buscar Tarefa</button></Link>
-      <Link to="/"><button className="login-button">Consulta</button></Link>
-      
-    </div>
+    <>
+      <div className="wms-header-dark">
+        TOTVS Varejo Supermercados - WMS
+      </div>
+      <div className="wms-header-cyan">Menu</div>
+      <div className="wms-header-gray">Usuário: CARONE DANIEL O</div>
+
+      <div className="wms-content">
+        <button 
+          className="wms-btn wms-btn-cyan" 
+          onClick={() => navigate('/tarefa')}
+        >
+          Buscar Tarefa
+        </button>
+        
+        <button 
+          className="wms-btn wms-btn-cyan" 
+          onClick={() => navigate('')}
+        >
+          Consulta
+        </button>
+        
+        <div style={{ marginTop: 'auto' }}>
+          <button 
+            className="wms-btn wms-btn-darkblue" 
+            onClick={() => navigate('/')}
+          >
+            Sair
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
 
