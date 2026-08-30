@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from "../components/footer.tsx"
 
 export const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ export const Login: React.FC = () => {
             Entrar
           </button>
         </div>
+        <Footer/>
       </div>
     </>
   );

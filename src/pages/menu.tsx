@@ -35,6 +35,7 @@ export const Menu: React.FC = () => {
             Sair
           </button>
         </div>
+        
       </div>
     </>
   );

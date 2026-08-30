@@ -3,7 +3,8 @@ import Home from './pages/login';
 import Menu from './pages/menu';
 import Tarefa from './pages/tarefa';
 import Separacao from './pages/separacao';
-import './App.css'; 
+import './App.css';
+
 
 const App = () => {
   return (

@@ -146,3 +146,50 @@ body {
   overflow: hidden;
   box-sizing: border-box;
 }
+.wms-footer {
+  width: 100%;
+  padding: 8px 10px;
+  background-color: #dbe4ed;
+  border-top: 1px solid #aebdc9;
+  color: #4a6572;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.wms-footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 8px 10px;
+  background-color: #dbe4ed;
+  border-top: 1px solid #aebdc9;
+  color: #4a6572;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.wms-footer-title {
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.wms-footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.wms-footer-info strong {
+  color: #1a568c;
+}
+
+.wms-footer-version {
+  margin-top: 3px;
+  font-size: 9px;
+  color: #7a94b0;
+}
