@@ -1,7 +1,7 @@
 {
   "name": "TOTVS-Simulation",
   "private": true,
-  "version": "26.01.016",
+  "version": "14.09.2026",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

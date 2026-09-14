@@ -9,20 +9,16 @@ export default function Footer () {
 
   <div className="wms-footer-info">
     <span>
-      Desenvolvido por <a href="https://daannzy9384.github.io/#first" target="_blank" rel="noreferrer"><strong>Daniel Oliveira</strong></a> (daannzy).
+      Desenvolvido por <a href="https://daannzy9384.github.io/#first" target="_blank" rel="noreferrer"><strong>Daniel Oliveira</strong></a>.
     </span>
 
     <span>
-      Protótipo para demonstração de melhorias no fluxo de trabalho da separação.
-    </span>
-
-    <span>
-      Projeto independente de simulação - sem vínculo com o sistema oficial.
+      Projeto de simulação independente, sem vínculo com o sistema oficial.
     </span>
   </div>
 
   <div className="wms-footer-version">
-    Simulação • Fluxo de Separação • v30.08.26
+    Simulação • Fluxo de separação • v14.09.2026
   </div>
 </footer>
 

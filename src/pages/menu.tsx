@@ -10,7 +10,7 @@ export const Menu: React.FC = () => {
         TOTVS Varejo Supermercados - WMS
       </div>
       <div className="wms-header-cyan">Menu</div>
-      <div className="wms-header-gray">Usuário: CARONE DANIEL O</div>
+      <div className="wms-header-gray">Usuário: DANIEL OLIVEIRA</div>
 
       <div className="wms-content">
         <button 

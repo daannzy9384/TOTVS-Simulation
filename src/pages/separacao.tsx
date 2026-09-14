@@ -1,71 +1,77 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import NovoRecursoCard from '../components/novorecurso';
+
+const produtosSeparacao = [
+  {
+    endereco: '01.002.3.1.2',
+    marca: 'Ypê',
+    produto: 'Detergente 500ml',
+    quantidade: 3,
+  },
+  {
+    endereco: '01.002.54.1.1',
+    marca: 'Veja',
+    produto: 'Água Sanitária 1L',
+    quantidade: 2,
+  },
+  {
+    endereco: '01.002.90.2.5',
+    marca: 'Omo',
+    produto: 'Sabão em Pó 1kg',
+    quantidade: 4,
+  },
+  {
+    endereco: '01.003.12.4.1',
+    marca: 'Clear',
+    produto: 'Shampoo 400ml',
+    quantidade: 5,
+  },
+];
 
 export default function SeparacaoScreen() {
   const navigate = useNavigate();
   const [confEnd, setConfEnd] = useState('');
-  const [enderecoAtual, setEnderecoAtual] = useState('01.002.3.1.2');
-  const [produtoAtual, setProdutoAtual] = useState({
+  const [indiceAtual, setIndiceAtual] = useState(0);
 
-    marca: 'Ypê',
-    produto: 'Detergente 500ml',
-    quantidade: 3,
-  });
+  const produtoAtual = produtosSeparacao[indiceAtual];
+  const enderecoAtual = produtoAtual.endereco;
 
   const handleNext = () => {
-    if (enderecoAtual === '01.002.3.1.2') {
-      setEnderecoAtual('01.002.54.1.1');
-
-      setProdutoAtual({
-        marca: 'Veja',
-        produto: 'Água Sanitária 1L',
-        quantidade: 2,
-      });
-
-      setConfEnd('');
-    }
+    setIndiceAtual((prev) => {
+      if (prev < produtosSeparacao.length - 1) {
+        return prev + 1;
+      }
+      return prev;
+    });
+    setConfEnd('');
   };
 
   const handlePrev = () => {
-    if (enderecoAtual === '01.002.54.1.1') {
-      setEnderecoAtual('01.002.3.1.2');
-
-      setProdutoAtual({
-        marca: 'Ypê',
-        produto: 'Detergente 500ml',
-        quantidade: 3,
-      });
-
-      setConfEnd('');
-    }
+    setIndiceAtual((prev) => {
+      if (prev > 0) {
+        return prev - 1;
+      }
+      return prev;
+    });
+    setConfEnd('');
   };
 
-  const primeiroEndereco = enderecoAtual === '01.002.3.1.2';
-  const ultimoEndereco = enderecoAtual === '01.002.54.1.1';
+  const primeiroEndereco = indiceAtual === 0;
+  const ultimoEndereco = indiceAtual === produtosSeparacao.length - 1;
 
   return (
     <>
-      <div className="wms-header-dark">
-        Separacao
-      </div>
+      <div className="wms-header-dark">Separação</div>
 
       <div className="wms-content">
-
         <div className="wms-row">
-          <span className="wms-label">
-            Endereço
-          </span>
+          <span className="wms-label">Endereço</span>
 
-          <div className="wms-readonly">
-            {enderecoAtual}
-          </div>
+          <div className="wms-readonly">{enderecoAtual}</div>
         </div>
 
         <div className="wms-row">
-          <span className="wms-label">
-            Produto
-          </span>
+          <span className="wms-label">Produto</span>
 
           <div className="wms-readonly">
             {produtoAtual.marca} — {produtoAtual.produto}
@@ -75,23 +81,20 @@ export default function SeparacaoScreen() {
         </div>
 
         <div className="wms-row">
-          <span className="wms-label">
-            Conf. End.
-          </span>
+          <span className="wms-label">Conf. End.</span>
 
           <input
             type="text"
             className="wms-input"
             value={confEnd}
             onChange={(e) => setConfEnd(e.target.value)}
-            autoFocus
           />
         </div>
 
-        <div className="wms-status-red">
-          Não Separado
-        </div>
-               <NovoRecursoCard/>
+        <div className="wms-status-red">Não Separado</div>
+
+
+
         <div
           style={{
             display: 'flex',
@@ -99,11 +102,7 @@ export default function SeparacaoScreen() {
           }}
         >
           <button
-            className={`wms-btn ${
-              ultimoEndereco
-                ? 'wms-btn-gray'
-                : 'wms-btn-cyan'
-            }`}
+            className={`wms-btn ${ultimoEndereco ? 'wms-btn-gray' : 'wms-btn-cyan'}`}
             onClick={handleNext}
             disabled={ultimoEndereco}
           >
@@ -111,20 +110,14 @@ export default function SeparacaoScreen() {
           </button>
 
           <button
-            className={`wms-btn ${
-              primeiroEndereco
-                ? 'wms-btn-gray'
-                : 'wms-btn-cyan'
-            }`}
+            className={`wms-btn ${primeiroEndereco ? 'wms-btn-gray' : 'wms-btn-cyan'}`}
             onClick={handlePrev}
             disabled={primeiroEndereco}
           >
             Endereço Anterior
           </button>
 
-          <button className="wms-btn wms-btn-cyan">
-            Verificar Reposição
-          </button>
+          <button className="wms-btn wms-btn-cyan">Verificar Reposição</button>
         </div>
 
         <div style={{ marginTop: 'auto' }}>
@@ -135,7 +128,6 @@ export default function SeparacaoScreen() {
             Retornar
           </button>
         </div>
-        
       </div>
     </>
   );

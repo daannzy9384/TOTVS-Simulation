@@ -13,13 +13,13 @@ export const Login: React.FC = () => {
       </div>
       <div className="wms-header-cyan">
         Coletor de Dados<br />
-        v: 26.01.016 - CONSINCO@CONSINCO
+        v: 14.09.2026 - DAAN@DAAN
       </div>
 
       <div className="wms-content">
         <div className="wms-row" style={{ marginTop: '20px' }}>
           <span className="wms-label">Código</span>
-          <input type="text" className="wms-input" autoFocus />
+          <input type="text" className="wms-input" />
         </div>
 
         
