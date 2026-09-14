@@ -22,7 +22,7 @@ export default function Footer () {
   </div>
 
   <div className="wms-footer-version">
-    Simulação • Fluxo de Separação • v1.0
+    Simulação • Fluxo de Separação • v30.08.26
   </div>
 </footer>
 

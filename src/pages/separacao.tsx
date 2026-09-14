@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NovoRecursoCard from '../components/novorecurso';
 
 export default function SeparacaoScreen() {
   const navigate = useNavigate();
   const [confEnd, setConfEnd] = useState('');
   const [enderecoAtual, setEnderecoAtual] = useState('01.002.3.1.2');
   const [produtoAtual, setProdutoAtual] = useState({
-    
+
     marca: 'Ypê',
     produto: 'Detergente 500ml',
     quantidade: 3,
@@ -90,7 +91,7 @@ export default function SeparacaoScreen() {
         <div className="wms-status-red">
           Não Separado
         </div>
-
+               <NovoRecursoCard/>
         <div
           style={{
             display: 'flex',
@@ -134,7 +135,7 @@ export default function SeparacaoScreen() {
             Retornar
           </button>
         </div>
-
+        
       </div>
     </>
   );
